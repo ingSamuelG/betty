@@ -1,16 +1,16 @@
 defmodule RogerApi do
 
 
-  def running_jobs(list), do:
-      list
+  def running_jobs(jobs), do:
+      jobs
     |>Keyword.values()
     |> Enum.flat_map(&(Map.values(&1)))
       |> Enum.flat_map(&(List.flatten(&1)))
 
-
-
-
-    end
+  def partitions(parts) do
+    
+  end
+      end
 
 
 
