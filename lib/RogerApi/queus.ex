@@ -1,10 +1,10 @@
-defmodule RogerApi.Partitions do
+defmodule RogerApi.Queus do
   @moduledoc  """
-  Its takes a list of nodes and returns the partitions
+  It takes a list of nodes and returns the queus
   """
 
-  def run(parts) do
-    parts
+  def nodes_to_queus(list) do
+    list
     |>Keyword.values()
     |>Enum.flat_map(&Map.values/1)
     |>Enum.flat_map(&of_partitions_to_queus/1)
@@ -28,8 +28,6 @@ defmodule RogerApi.Partitions do
           "count"               =>  queu_value.message_count,
           "paused"              =>  paused?(queu_value.paused)})  end)
 
-
-    
   end
 
   defp dispose_unused_keys(q) do
