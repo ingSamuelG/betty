@@ -1,9 +1,10 @@
-defmodule RogerapiTest do
+defmodule RogerapiTest.Queus do
   use ExUnit.Case
-  doctest RogerApi
+  doctest RogerApi.Job
 
-  import RogerApi, only: [running_jobs: 1, partitions: 1]
-  import Roger.Job, only: [runningjobs: 0 ,outjobs: 0, inque: 0, outque: 0]
+
+  import Roger.Job, only: [ runningjobs: 0 ,outjobs: 0 ]
+  import RogerApi.Job , only: [ running_jobs: 1 ]
 
   test "given an input of  a list of nodes, partitions and jobs the output should be a list of jobs running" do
     
@@ -12,10 +13,4 @@ defmodule RogerapiTest do
     assert  MapSet.new(output) == MapSet.new(running_jobs(input))
   end
 
-  test "Test of the transformation of partitions" do
-   quein =inque()
-   queout =outque()
-   assert MapSet.new(queout) == MapSet.new(partitions(quein))
-
-  end
 end
