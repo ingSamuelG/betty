@@ -8,6 +8,7 @@ defmodule Rogerapi.Mixfile do
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       deps: deps(),
+      elixirc_paths: paths(),
       aliases: aliases()
     ]
   end
@@ -17,6 +18,11 @@ defmodule Rogerapi.Mixfile do
       test: "test --no-start"
     ]
   end
+
+  defp paths() do
+    ["lib", "test/support"]
+               end
+
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
