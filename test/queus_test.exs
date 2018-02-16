@@ -7,8 +7,8 @@ defmodule RogerapiTest.Jobs do
   alias RogerApi.Support
 
   test "given an input of  a list of nodes, partitions and queus the output should be a list of queus" do
-   quein =Support.inque()
-   queout =Support.outque()
+   quein =Support.nodes_queus()
+   queout =Support.out_queus()
    assert MapSet.new(queout) == MapSet.new(Queus.nodes_to_queus(quein))
 
   end

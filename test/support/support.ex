@@ -2,7 +2,7 @@ defmodule RogerApi.Support do
 
   defstruct id: nil, module: nil, args: nil, queue_key: nil, execution_key: nil, retry_count: 0, started_at: 0, queued_at: 0
 
-  def runningjobs do
+  def nodes_jobs do
     [
       "watcher@127.0.0.1": %{
          "roger_demo_partition" => [
@@ -67,7 +67,7 @@ defmodule RogerApi.Support do
 
   end
 
-  def outjobs do
+  def out_jobs do
     [
       %Roger.Job{
         args: %{"country" => "Venezuela", "email" => "janedoe@gmail.com", "name" => "Jane Doe", "number_of_pets" => 966},
@@ -123,9 +123,8 @@ defmodule RogerApi.Support do
     ]
   end
 
-  def inque do
-
-  input = [
+  def nodes_queus do
+  [
     "server@127.0.0.1": %{
       running: %{
         "roger_test_partition_1" => %{
@@ -162,7 +161,7 @@ defmodule RogerApi.Support do
 
 end
 
-def outque do
+def out_queus do
   [
     %{
       "count" => 740,
