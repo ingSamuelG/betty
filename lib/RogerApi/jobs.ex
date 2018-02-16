@@ -1,7 +1,7 @@
 defmodule RogerApi.Job do
 
   @moduledoc """
-  Its takes a list of nodes and gives the runing jobs
+  Its takes a list of nodes and returns the the runing jobs
   """
 
   def running_jobs(jobs) do
@@ -11,6 +11,7 @@ defmodule RogerApi.Job do
       |> Enum.flat_map(&(List.flatten(&1)))
 
   end
+
 end
 
 
