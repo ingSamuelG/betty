@@ -258,6 +258,33 @@ def out_queus do
   
 end
 
+def out_node_list do
+
+  [
+    %{
+      "node_name" => :"server@127.0.0.1",
+      "partition_name" => "roger_test_partition_1",
+      "status" => :running
+    },
+    %{
+      "node_name" => :"server@127.0.0.1",
+      "partition_name" => "roger_test_partition_2",
+      "status" => :waiting
+    },
+    %{
+      "node_name" => :"watcher@127.0.0.1",
+      "partition_name" => "roger_test_partition_3",
+      "status" => :running
+    },
+    %{
+      "node_name" => :"watcher@127.0.0.1",
+      "partition_name" => "roger_test_partition_4",
+      "status" => :waiting
+    }
+  ]
+
+end
+
   end
 
 
